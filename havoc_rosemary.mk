@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,22 +14,23 @@
 # limitations under the License.
 #
 
-# Common AOSP base
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
-# Inherit device tree
+# Inherit from device makefile.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Bootanimation
+# Inherit some common Havoc-OS stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+
+# Boot animation res
 TARGET_BOOT_ANIMATION_RES := 1080
+
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
-PRODUCT_NAME := lineage_rosemary
+PRODUCT_NAME := havoc_rosemary
 PRODUCT_DEVICE := rosemary
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
