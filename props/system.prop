@@ -1,4 +1,5 @@
 # Havoc
+ro.havoc.device.name=Xiaomi Redmi Note 10S
 ro.havoc.maintainer=CodeChas3r
 
 # Should improve performance a bit
